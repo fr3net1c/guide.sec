@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шифрування | Довідник</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self';">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header-bar">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">guide.sec</a>
+            </div>
+            <nav class="top-nav">
+                <a href="index.html">Головна</a>
+                <a href="main.html">Основне</a>
+                <a href="tools.html">Інструменти</a>
+                <a href="encryption.html" class="active">Шифрування</a>
+                <a href="examples.html">Приклади</a>
+                <a href="contacts.html">Контакти</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container main-container">
+        <div class="content-section">
+            <h2>Основи криптографії</h2>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Вступ</h3>
+                </div>
+                <div class="card-body">
+                    <p>Криптографія - наука про захист інформації шляхом її перетворення у форму, що не може бути прочитана без спеціальних знань. Шифрування забезпечує конфіденційність, цілісність та автентичність даних.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Ключові поняття</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Відкритий текст</strong> - початкове повідомлення.</li>
+                        <li><strong>Шифротекст</strong> - зашифроване повідомлення.</li>
+                        <li><strong>Ключ</strong> - секретний параметр для шифрування.</li>
+                        <li><strong>Алгоритм шифрування</strong> - процедура для перетворення відкритого тексту в шифротекст.</li>
+                        <li><strong>Криптоаналіз</strong> - наука про виявлення слабкостей в системах.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Симетричне шифрування</h3>
+                </div>
+                <div class="card-body">
+                    <p>Симетричне шифрування використовує один і той самий ключ для шифрування та розшифрування.</p>
+                    <h4>Популярні алгоритми</h4>
+                    <ul>
+                        <li><strong>AES</strong> - сучасний стандарт з 128, 192, 256 бітами ключа.</li>
+                        <li><strong>DES</strong> - застарілий алгоритм з 56-бітним ключем.</li>
+                        <li><strong>3DES</strong> - покращена версія DES.</li>
+                        <li><strong>Twofish</strong> - блочний шифр з 128 бітами та ключами до 256 біт.</li>
+                    </ul>
+                    <h4>Режими шифрування</h4>
+                    <ul>
+                        <li><strong>ECB</strong> - простий, не рекомендований.</li>
+                        <li><strong>CBC</strong> - кожен блок об'єднується з попереднім.</li>
+                        <li><strong>CTR</strong> - перетворює блочний шифр на потоковий.</li>
+                        <li><strong>GCM</strong> - забезпечує автентифікацію та конфіденційність.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Асиметричне шифрування</h3>
+                </div>
+                <div class="card-body">
+                    <p>Асиметричне шифрування використовує пару ключів: відкритий для шифрування і закритий для розшифрування.</p>
+                    <h4>Популярні алгоритми</h4>
+                    <ul>
+                        <li><strong>RSA</strong> - базується на факторизації великих чисел.</li>
+                        <li><strong>ECC</strong> - використовує еліптичні криві для ефективності.</li>
+                        <li><strong>DSA</strong> - для цифрових підписів.</li>
+                        <li><strong>ElGamal</strong> - на основі дискретних логарифмів.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Хешування</h3>
+                </div>
+                <div class="card-body">
+                    <p>Хешування перетворює дані в бітовий рядок фіксованої довжини.</p>
+                    <h4>Популярні алгоритми</h4>
+                    <ul>
+                        <li><strong>MD5</strong> - застарілий алгоритм.</li>
+                        <li><strong>SHA-1</strong> - вважається небезпечним.</li>
+                        <li><strong>SHA-256</strong> - частина SHA-2, широко використовується.</li>
+                        <li><strong>SHA-3</strong> - новіший, стійкий до атак.</li>
+                        <li><strong>Blake2</strong> - швидший за SHA-3.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Цифрові підписи</h3>
+                </div>
+                <div class="card-body">
+                    <p>Цифровий підпис перевіряє автентичність та цілісність повідомлення.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Сертифікати та PKI</h3>
+                </div>
+                <div class="card-body">
+                    <p>PKI забезпечує управління цифровими сертифікатами.</p>
+                    <h4>Компоненти PKI</h4>
+                    <ul>
+                        <li><strong>CA</strong> - центр сертифікації.</li>
+                        <li><strong>RA</strong> - реєстраційний орган.</li>
+                        <li><strong>Сертифікати X.509</strong> - стандартний формат сертифікатів.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>TLS/SSL</h3>
+                </div>
+                <div class="card-body">
+                    <p>TLS/SSL забезпечує безпечну передачу даних в мережі.</p>
+                    <h4>Процес TLS-рукостискання</h4>
+                    <ol>
+                        <li>Клієнт надсилає ClientHello.</li>
+                        <li>Сервер відповідає ServerHello.</li>
+                        <li>Клієнт перевіряє сертифікат.</li>
+                        <li>Обчислюється спільний секрет.</li>
+                        <li>Обмінюються повідомленнями Finished.</li>
+                        <li>Починається шифрована передача.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Шифрування на практиці</h3>
+                </div>
+                <div class="card-body">
+                    <h4>OpenSSL</h4>
+                    <pre><code>openssl genrsa -out private_key.pem 2048
+openssl rsa -in private_key.pem -pubout -out public_key.pem
+openssl rsautl -encrypt -inkey public_key.pem -pubin -in plaintext.txt -out encrypted.bin
+openssl rsautl -decrypt -inkey private_key.pem -in encrypted.bin -out decrypted.txt</code></pre>
+                    <h4>GPG</h4>
+                    <pre><code>gpg --gen-key
+gpg --encrypt --recipient recipient@example.com file.txt
+gpg --decrypt file.txt.gpg > decrypted.txt</code></pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Найкращі практики</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Використовуйте сучасні алгоритми (AES, RSA, SHA-256+).</li>
+                        <li>Уникайте застарілих алгоритмів (DES, MD5).</li>
+                        <li>Забезпечте безпечне зберігання ключів.</li>
+                        <li>Регулярно оновлюйте ключі.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Додаткові ресурси</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><a href="examples.html">Практичні приклади шифрування</a></li>
+                        <li><a href="network-security.html">Використання шифрування в мережевій безпеці</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 guide.sec | Всі права захищено</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sanitizeInput = function(input) {
+                return String(input)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#x27;')
+                    .replace(/\//g, '&#x2F;');
+            };
+
+            const urlParams = new URLSearchParams(window.location.search);
+            for (const [key, value] of urlParams) {
+                const sanitizedValue = sanitizeInput(value);
+            }
+        });
+    </script>
+</body>
+</html>

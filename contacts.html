@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти | guide.sec</title>
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://formsubmit.co; form-action https://formsubmit.co;">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header-bar">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">guide.sec</a>
+            </div>
+            <nav class="top-nav">
+                <a href="index.html">Головна</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container main-container">
+        <div class="hero">
+            <h1>guide.sec</h1>
+            <p class="tagline">&lt;3 зворотній зв'язок</p>
+            
+            <p class="description">надішліть повідомлення через захищений термінал</p>
+        </div>
+
+        <div class="terminal-wrapper">
+            <div class="terminal">
+                <div class="terminal-header">
+                    <span>contact@guide.sec</span>
+                </div>
+                <div class="terminal-content" id="terminal-content">
+                    <p>$ mail -s "Message to guide.sec" frenetic@dnmx.su</p>
+                    <form id="terminalForm" class="terminal-form" action="https://formsubmit.co/frenetic@dnmx.su" method="POST">
+                        <p id="emailPrompt">$ From: <input type="email" name="email" id="userEmail" class="terminal-input" placeholder="your@email.com" required></p>
+                        <p id="subjectPrompt">$ Subject: <input type="text" name="_subject" id="subject" class="terminal-input" placeholder="Issue report / Question" required></p>
+                        <p id="messagePrompt">$ Message:<br>
+                        <textarea name="message" id="message" class="terminal-message" placeholder="Type your message here..." required></textarea></p>
+                        <p><button type="submit" id="sendButton" class="terminal-button">send_message</button></p>
+                        
+                        
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="box">
+                        <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
+                    </form>
+                </div>
+            </div>
+            
+            <div class="button-container">
+                <a href="index.html" class="button">На головну</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 guide.sec | Всі права захищено</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.querySelector('.cursor');
+            
+            if (!cursor) {
+                const terminalContent = document.getElementById('terminal-content');
+                const cursorElement = document.createElement('span');
+                cursorElement.className = 'cursor';
+                cursorElement.textContent = '_';
+                terminalContent.appendChild(cursorElement);
+            }
+            
+            setInterval(function() {
+                const currentCursor = document.querySelector('.cursor');
+                if (currentCursor) {
+                    currentCursor.style.opacity = (currentCursor.style.opacity === '0') ? '1' : '0';
+                }
+            }, 600);
+        });
+    </script>
+    
+    <style>
+        .terminal-input {
+            background-color: transparent;
+            border: none;
+            color: var(--light-text);
+            font-family: 'Roboto Mono', 'Courier New', monospace;
+            font-size: 0.95rem;
+            outline: none;
+            padding: 0 5px;
+            margin-left: 5px;
+            width: 70%;
+        }
+        
+        .terminal-message {
+            background-color: rgba(13, 16, 38, 0.5);
+            border: 1px solid var(--border-color);
+            color: var(--light-text);
+            font-family: 'Roboto Mono', 'Courier New', monospace;
+            font-size: 0.95rem;
+            resize: vertical;
+            min-height: 100px;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            outline: none;
+        }
+        
+        .terminal-button {
+            background-color: var(--primary-color);
+            border: none;
+            color: var(--light-text);
+            padding: 8px 20px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-family: 'Roboto Mono', 'Courier New', monospace;
+            margin-top: 10px;
+            transition: var(--transition);
+        }
+        
+        .terminal-button:hover {
+            background-color: var(--highlight-color);
+            transform: translateY(-2px);
+        }
+        
+        .terminal-form p {
+            margin-bottom: 15px;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Термінал кібербезпеки</title>
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self';">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header-bar">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">guide.sec</a>
+            </div>
+            <nav class="top-nav">
+                <a href="contacts.html">Контакти</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container main-container">
+        <div class="hero">
+            <h1>guide.sec</h1>
+            <p class="tagline">&lt;3 захист мережі</p>
+            
+            <p class="description">підключення до мережевих сервісів та виявлення вразливостей</p>
+        </div>
+
+        <div class="terminal-wrapper">
+            <div class="terminal">
+                <div class="terminal-header">
+                    <span>terminal</span>
+                </div>
+                <div class="terminal-content">
+                    <p>$ nc -lvnp 2233</p>
+                    <p>$ listening on [any] 2233 ...</p>
+                    <p>$ connect to [192.168.1.5] from (UNKNOWN) [192.168.1.100] 49213</p>
+                    <p>$ Microsoft Windows [Version 10.0.19042.1466]</p>
+                    <p>$ C:\\Users\\Administrator> whoami</p>
+                    <p>$ SYSTEM</p>
+                    <p class="cursor">_</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="topics-section">
+            <div class="topic">
+                <h3><a href="contacts.html">Контакти</a></h3>
+                <p>Зв'язатися зi мною</p>
+            </div>
+
+            <div class="topic">
+                <h3><a href="encryption.html">Шифрування</a></h3>
+                <p>Методи захисту даних, криптографічні алгоритми та їх практичне застосування</p>
+            </div>
+
+            <div class="topic">
+                <h3><a href="examples.html">Приклади</a></h3>
+                <p>Практичні приклади використання інструментів кібербезпеки та пентестінгу</p>
+            </div>
+
+            <div class="topic">
+                <h3><a href="main.html">Головна</a></h3>
+                <p>Основна інформація про проект guide.sec та його можливості</p>
+            </div>
+
+            <div class="topic">
+                <h3><a href="network-security.html">Мережева безпека</a></h3>
+                <p>Інструменти та методи для захисту комп'ютерних мереж від несанкціонованого доступу</p>
+            </div>
+
+            <div class="topic">
+                <h3><a href="tools.html">Інструменти</a></h3>
+                <p>Огляд корисних інструментів для забезпечення кібербезпеки та проведення тестів на проникнення</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 guide.sec | Всі права захищено</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.querySelector('.cursor');
+            
+            setInterval(function() {
+                cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+            }, 600);
+
+            const sanitizeInput = function(input) {
+                return String(input)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#x27;')
+                    .replace(/\//g, '&#x2F;');
+            };
+
+            const urlParams = new URLSearchParams(window.location.search);
+            for (const [key, value] of urlParams) {
+                const sanitizedValue = sanitizeInput(value);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основне | Довідник</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self';">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header-bar">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">guide.sec</a>
+            </div>
+            <nav class="top-nav">
+                <a href="index.html">Головна</a>
+                <a href="main.html" class="active">Основне</a>
+                <a href="tools.html">Інструменти</a>
+                <a href="examples.html">Приклади</a>
+                <a href="contacts.html">Контакти</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container main-container">
+        <div class="content-section">
+            <h2>Вступ до кібербезпеки</h2>
+            <div class="card">
+                <div class="card-header">
+                    <h3>Про довідник</h3>
+                </div>
+                <div class="card-body">
+                    <p>Цей довідник містить основні матеріали з кібербезпеки, включаючи теоретичні основи та практичні приклади для навчання та підвищення кваліфікації.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Основні розділи</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong><a href="encryption.html">Шифрування</a></strong> - основи криптографії, симетричне та асиметричне шифрування, хешування та цифрові підписи.</li>
+                        <li><strong><a href="network-security.html">Мережева безпека</a></strong> - захист мережевої інфраструктури, виявлення та запобігання вторгненням, захист від мережевих атак.</li>
+                        <li><strong><a href="examples.html">Приклади атак та захисту</a></strong> - практичні приклади різних типів атак (XSS, SQL-ін'єкції, мережеві атаки) та методи захисту від них.</li>
+                        <li><strong><a href="tools.html">Інструменти та ресурси</a></strong> - огляд інструментів для тестування на проникнення, аналізу безпеки та навчальних ресурсів.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Основні принципи безпеки</h3>
+                </div>
+                <div class="card-body">
+                    <h4>Принцип найменших привілеїв</h4>
+                    <p>Суб'єкт (користувач, програма, процес) повинен мати тільки мінімально необхідні для роботи привілеї. Це обмежує потенційну шкоду у випадку компрометації.</p>
+
+                    <h4>Глибинний захист (Defense in Depth)</h4>
+                    <p>Використання кількох шарів захисту для забезпечення безпеки системи. Якщо один шар безпеки буде порушений, інші шари продовжать захищати систему.</p>
+
+                    <h4>Найслабкіша ланка</h4>
+                    <p>Безпека системи визначається її найслабкішим компонентом. Атакуючі зазвичай шукають найпростіший шлях проникнення, а не найскладніший.</p>
+
+                    <h4>Безпека через прозорість</h4>
+                    <p>Безпека системи не повинна залежати від секретності її реалізації. Навіть якщо зловмисник знає, як працює система захисту, він не повинен мати можливості її обійти.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Модель CIA (Конфіденційність, Цілісність, Доступність)</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Конфіденційність (Confidentiality)</strong> - забезпечення того, що інформація доступна тільки авторизованим користувачам.</li>
+                        <li><strong>Цілісність (Integrity)</strong> - гарантія того, що інформація не була змінена несанкціоновано.</li>
+                        <li><strong>Доступність (Availability)</strong> - забезпечення того, що авторизовані користувачі мають доступ до інформації за потреби.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Додаткові принципи</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Автентифікація</strong> - перевірка ідентичності користувача або системи.</li>
+                        <li><strong>Авторизація</strong> - визначення рівня доступу для автентифікованого користувача.</li>
+                        <li><strong>Облік</strong> - відстеження дій користувачів та систем для аудиту та розслідування інцидентів.</li>
+                        <li><strong>Невідмовність</strong> - неможливість заперечення факту виконання дії.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Життєвий цикл безпеки</h3>
+                </div>
+                <div class="card-body">
+                    <ol>
+                        <li><strong>Оцінка ризиків</strong> - ідентифікація активів, загроз та вразливостей.</li>
+                        <li><strong>Розробка політик безпеки</strong> - створення правил та процедур.</li>
+                        <li><strong>Впровадження заходів безпеки</strong> - технічні та організаційні заходи.</li>
+                        <li><strong>Моніторинг та виявлення</strong> - постійний моніторинг систем для виявлення інцидентів.</li>
+                        <li><strong>Реагування на інциденти</strong> - виявлення, аналіз та усунення інцидентів безпеки.</li>
+                        <li><strong>Відновлення</strong> - повернення до нормальної роботи після інциденту.</li>
+                        <li><strong>Аналіз та вдосконалення</strong> - вивчення інцидентів та вдосконалення процесів безпеки.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Основні типи загроз</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Шкідливе програмне забезпечення</strong> - віруси, черв'яки, трояни, програми-вимагачі.</li>
+                        <li><strong>Соціальна інженерія</strong> - фішинг, претекстинг, шантаж, вивідування інформації.</li>
+                        <li><strong>Мережеві атаки</strong> - DDoS, MITM, сканування портів, атаки на DNS.</li>
+                        <li><strong>Веб-атаки</strong> - XSS, SQL-ін'єкції, CSRF, вразливості в компонентах.</li>
+                        <li><strong>Інсайдерські загрози</strong> - зловмисні дії співробітників або неумисні помилки.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Навігація по довіднику</h3>
+                </div>
+                <div class="card-body">
+                    <p>Виберіть один із розділів вище, щоб перейти до детальної інформації за відповідною темою. Для вивчення практичних прикладів перейдіть до розділу <a href="examples.html">Приклади</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 guide.sec | Всі права захищено</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sanitizeInput = function(input) {
+                return String(input)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#x27;')
+                    .replace(/\//g, '&#x2F;');
+            };
+
+            const urlParams = new URLSearchParams(window.location.search);
+            for (const [key, value] of urlParams) {
+                const sanitizedValue = sanitizeInput(value);
+            }
+        });
+    </script>
+</body>
+</html>
